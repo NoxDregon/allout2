@@ -1,22 +1,51 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import lots from '../components/lots.vue'
+import createLot from '../components/CreateLot.vue'
+import Profile from '../components/Profile.vue'
+import lot from '../components/lot.vue'
+import Register from '../components/Register.vue'
+import Login from '../components/Login.vue'
+import Header from '../components/header.vue'
+
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/header',
+    name: 'header',
+    component: Header
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/',
+    name: 'lots',
+    component: lots
+  },
+  {
+    path: '/create',
+    name: 'createLot',
+    component: createLot
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/lot',
+    name: 'lot',
+    component: lot
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   }
 ]
 
